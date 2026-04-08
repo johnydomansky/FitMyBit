@@ -224,7 +224,7 @@ function ExportDialog({ item, imgRef, settings, onClose }) {
               className="flex-1 bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 text-white text-sm focus:border-green-500 focus:outline-none"
               autoFocus
             />
-            <span className="text-sm text-gray-500 font-mono bg-gray-800 px-2 py-2 rounded-lg">.{exportExt}</span>
+            <span className="text-sm text-gray-400 font-mono bg-gray-800 px-2 py-2 rounded-lg">.{exportExt}</span>
           </div>
         </div>
 
@@ -252,7 +252,7 @@ function ExportDialog({ item, imgRef, settings, onClose }) {
               <input type="radio" name="opt" checked={optMode === "full"} onChange={() => setOptMode("full")} className="accent-green-500" />
               <div className="flex-1">
                 <span className="text-sm text-white font-medium">Full Quality</span>
-                <p className="text-xs text-gray-500 mt-0.5">
+                <p className="text-xs text-gray-400 mt-0.5">
                   {isPng ? "Lossless PNG — maximum quality, largest file" : "100% quality — no compression artifacts"}
                 </p>
               </div>
@@ -262,7 +262,7 @@ function ExportDialog({ item, imgRef, settings, onClose }) {
               <input type="radio" name="opt" checked={optMode === "web"} onChange={() => setOptMode("web")} className="accent-teal-500" />
               <div className="flex-1">
                 <span className="text-sm text-white font-medium">Optimized for Web</span>
-                <p className="text-xs text-gray-500 mt-0.5">
+                <p className="text-xs text-gray-400 mt-0.5">
                   {isPng
                     ? `Converts to ${s.bgMode === "transparent" ? "WebP" : "JPG"} at 75% — great balance of quality and size`
                     : "75% quality — great balance of quality and size"}
@@ -274,7 +274,7 @@ function ExportDialog({ item, imgRef, settings, onClose }) {
               <input type="radio" name="opt" checked={optMode === "custom"} onChange={() => setOptMode("custom")} className="accent-amber-500" />
               <div className="flex-1">
                 <span className="text-sm text-white font-medium">Custom Quality</span>
-                <p className="text-xs text-gray-500 mt-0.5">
+                <p className="text-xs text-gray-400 mt-0.5">
                   {isPng
                     ? `Converts to ${s.bgMode === "transparent" ? "WebP" : "JPG"} at ${customQ}%`
                     : `${customQ}% quality — adjust with slider`}
@@ -283,9 +283,9 @@ function ExportDialog({ item, imgRef, settings, onClose }) {
             </label>
             {optMode === "custom" && (
               <div className="flex items-center gap-3 px-4 py-2 bg-gray-800 rounded-lg">
-                <span className="text-xs text-gray-500">Low</span>
+                <span className="text-xs text-gray-400">Low</span>
                 <input type="range" min={1} max={100} value={customQ} onChange={(e) => setCustomQ(+e.target.value)} className="flex-1 accent-amber-500" />
-                <span className="text-xs text-gray-500">High</span>
+                <span className="text-xs text-gray-400">High</span>
                 <span className="text-sm text-white font-bold font-mono w-12 text-right">{customQ}%</span>
               </div>
             )}
@@ -298,7 +298,7 @@ function ExportDialog({ item, imgRef, settings, onClose }) {
             {realSize !== null ? (
               <span className="text-base text-green-400 font-bold">{formatSizeDisplay()}</span>
             ) : (
-              <span className="text-xs text-gray-500 animate-pulse">Calculating...</span>
+              <span className="text-xs text-gray-400 animate-pulse">Calculating...</span>
             )}
           </div>
           <div className="flex justify-between items-center">
@@ -328,7 +328,7 @@ function ExportDialog({ item, imgRef, settings, onClose }) {
             Quick Download
           </button>
         </div>
-        <button onClick={onClose} className="w-full text-xs text-gray-500 hover:text-gray-300 transition-colors py-1">Cancel</button>
+        <button onClick={onClose} className="w-full text-xs text-gray-400 hover:text-gray-300 transition-colors py-1">Cancel</button>
       </div>
     </div>
   );
@@ -996,7 +996,7 @@ function ShortcutsPanel({ onClose, mode }) {
             </div>
           ))}
         </div>
-        <button onClick={onClose} className="mt-4 w-full text-xs text-gray-500 hover:text-gray-300 py-2 transition-colors">Close (Esc)</button>
+        <button onClick={onClose} className="mt-4 w-full text-xs text-gray-400 hover:text-gray-300 py-2 transition-colors">Close (Esc)</button>
       </div>
     </div>
   );
@@ -1122,7 +1122,7 @@ function ImageEditor({ item, onChange, onRemove, customPresets, onAddPreset, onR
           <span>Redo</span><span className="text-base leading-none">↷</span>
         </button>
         <div className="relative group ml-1">
-          <button className="text-gray-600 hover:text-gray-400 transition-colors p-1 rounded" tabIndex={-1}>
+          <button className="text-gray-500 hover:text-gray-400 transition-colors p-1 rounded" tabIndex={-1}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M6 16h12"/>
             </svg>
@@ -1144,7 +1144,7 @@ function ImageEditor({ item, onChange, onRemove, customPresets, onAddPreset, onR
             </div>
             <div className="min-w-0">
               <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Original</h3>
-              <div className="text-xs text-gray-500 mt-0.5">{s.origW} x {s.origH} px — {fmtBytes(item.fileSize)}</div>
+              <div className="text-xs text-gray-400 mt-0.5">{s.origW} x {s.origH} px — {fmtBytes(item.fileSize)}</div>
             </div>
           </div>
 
@@ -1153,17 +1153,17 @@ function ImageEditor({ item, onChange, onRemove, customPresets, onAddPreset, onR
             <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
               Preview — Canvas {s.canvasW}x{s.canvasH} — Image {Math.round(s.imgW)}x{Math.round(s.imgH)}
             </h3>
-            <span className="text-xs text-gray-500">Hover to transform</span>
+            <span className="text-xs text-gray-400">Hover to transform</span>
           </div>
           {imgLoaded && (
             <InteractivePreview settings={s} imgEl={imgRef.current} onUpdate={(patch) => set(patch)} cropMode={cropMode} onCropChange={(patch) => set(patch)} />
           )}
           <div className="mt-2 flex items-center justify-center gap-3">
-            <span className="text-xs text-gray-500">
+            <span className="text-xs text-gray-400">
               {realSize !== null ? <span className="text-green-400 font-medium">{fmtBytes(realSize)}</span> : <span className="animate-pulse">Calculating...</span>}
             </span>
-            <span className="text-xs text-gray-600">|</span>
-            <span className="text-xs text-gray-500">{FORMAT_LABELS[s.format]}</span>
+            <span className="text-xs text-gray-500">|</span>
+            <span className="text-xs text-gray-400">{FORMAT_LABELS[s.format]}</span>
           </div>
         </div>
 
@@ -1195,7 +1195,7 @@ function ImageEditor({ item, onChange, onRemove, customPresets, onAddPreset, onR
                 <span className="w-2 h-2 bg-teal-400 rounded-full inline-block"></span> Blur Settings
               </h4>
               <div>
-                <label className="text-xs text-gray-500 block mb-2">Blur Amount: {s.blurAmount}px</label>
+                <label className="text-xs text-gray-400 block mb-2">Blur Amount: {s.blurAmount}px</label>
                 <input
                   type="range"
                   min={1}
@@ -1209,7 +1209,7 @@ function ImageEditor({ item, onChange, onRemove, customPresets, onAddPreset, onR
                 <button onClick={blurBgFillCanvas} className="text-xs py-2 bg-gray-700 hover:bg-green-600 hover:text-white text-gray-300 rounded-lg transition-colors font-medium">Fill Canvas</button>
                 <button onClick={blurBgMatchImage} className="text-xs py-2 bg-gray-700 hover:bg-amber-600 hover:text-white text-gray-300 rounded-lg transition-colors font-medium">Match Image</button>
               </div>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-gray-400">
                 Use <span className="text-amber-400 font-semibold">○ BG Layer</span> in the preview to freely drag and resize.
               </p>
             </div>
@@ -1227,7 +1227,7 @@ function ImageEditor({ item, onChange, onRemove, customPresets, onAddPreset, onR
             </div>
             <div className="text-xs text-gray-400">
               <span className="text-green-400 font-medium">{s.canvasW}x{s.canvasH}</span>
-              <span className="mx-1.5 text-gray-500">|</span>
+              <span className="mx-1.5 text-gray-400">|</span>
               <span className="text-green-400 font-medium">{realSize !== null ? fmtBytes(realSize) : "..."}</span>
             </div>
             <button onClick={() => setShowExport(true)} className="w-full px-5 py-2.5 bg-green-600 hover:bg-green-500 text-white text-sm font-bold rounded-xl transition-colors shadow-lg shadow-green-600/20">
@@ -1253,11 +1253,11 @@ function ImageEditor({ item, onChange, onRemove, customPresets, onAddPreset, onR
                 <div className="space-y-3 pt-3">
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="text-xs text-gray-500 block mb-1">Width</label>
+                      <label className="text-xs text-gray-400 block mb-1">Width</label>
                       <input type="number" value={s.canvasW} onChange={(e) => setCanvasW(+e.target.value)} className="w-full bg-gray-800 border border-gray-600 rounded-lg px-3 py-1.5 text-white text-sm focus:border-green-500 focus:outline-none" />
                     </div>
                     <div>
-                      <label className="text-xs text-gray-500 block mb-1">Height</label>
+                      <label className="text-xs text-gray-400 block mb-1">Height</label>
                       <input type="number" value={s.canvasH} onChange={(e) => setCanvasH(+e.target.value)} className="w-full bg-gray-800 border border-gray-600 rounded-lg px-3 py-1.5 text-white text-sm focus:border-green-500 focus:outline-none" />
                     </div>
                   </div>
@@ -1274,7 +1274,7 @@ function ImageEditor({ item, onChange, onRemove, customPresets, onAddPreset, onR
                     ))}
                     <button
                       onClick={() => onAddPreset({ label: `${s.canvasW}x${s.canvasH}`, w: s.canvasW, h: s.canvasH })}
-                      className="text-xs px-2 py-1 bg-gray-700 hover:bg-green-600/60 text-gray-500 hover:text-green-200 rounded-lg transition-colors border border-dashed border-gray-600"
+                      className="text-xs px-2 py-1 bg-gray-700 hover:bg-green-600/60 text-gray-400 hover:text-green-200 rounded-lg transition-colors border border-dashed border-gray-600"
                       title="Save current canvas size as a custom preset"
                     >+ Save</button>
                   </div>
@@ -1296,11 +1296,11 @@ function ImageEditor({ item, onChange, onRemove, customPresets, onAddPreset, onR
                 <div className="space-y-3 pt-3">
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="text-xs text-gray-500 block mb-1">Width</label>
+                      <label className="text-xs text-gray-400 block mb-1">Width</label>
                       <input type="number" value={Math.round(s.imgW)} onChange={(e) => setImgW(+e.target.value)} className="w-full bg-gray-800 border border-gray-600 rounded-lg px-3 py-1.5 text-white text-sm focus:border-amber-500 focus:outline-none" />
                     </div>
                     <div>
-                      <label className="text-xs text-gray-500 block mb-1">Height</label>
+                      <label className="text-xs text-gray-400 block mb-1">Height</label>
                       <input type="number" value={Math.round(s.imgH)} onChange={(e) => setImgH(+e.target.value)} className="w-full bg-gray-800 border border-gray-600 rounded-lg px-3 py-1.5 text-white text-sm focus:border-amber-500 focus:outline-none" />
                     </div>
                   </div>
@@ -1347,19 +1347,19 @@ function ImageEditor({ item, onChange, onRemove, customPresets, onAddPreset, onR
                   {/* Secondary: numeric inputs for precision */}
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="text-xs text-gray-500 block mb-1">Crop X</label>
+                      <label className="text-xs text-gray-400 block mb-1">Crop X</label>
                       <input type="number" value={Math.round(s.cropX)} onChange={(e) => set({ cropX: clamp(+e.target.value, 0, s.origW - s.cropW) })} className="w-full bg-gray-800 border border-gray-600 rounded-lg px-2 py-1.5 text-white text-sm focus:border-teal-500 focus:outline-none" />
                     </div>
                     <div>
-                      <label className="text-xs text-gray-500 block mb-1">Crop Y</label>
+                      <label className="text-xs text-gray-400 block mb-1">Crop Y</label>
                       <input type="number" value={Math.round(s.cropY)} onChange={(e) => set({ cropY: clamp(+e.target.value, 0, s.origH - s.cropH) })} className="w-full bg-gray-800 border border-gray-600 rounded-lg px-2 py-1.5 text-white text-sm focus:border-teal-500 focus:outline-none" />
                     </div>
                     <div>
-                      <label className="text-xs text-gray-500 block mb-1">Crop W</label>
+                      <label className="text-xs text-gray-400 block mb-1">Crop W</label>
                       <input type="number" value={Math.round(s.cropW)} onChange={(e) => set({ cropW: clamp(+e.target.value, 20, s.origW - s.cropX) })} className="w-full bg-gray-800 border border-gray-600 rounded-lg px-2 py-1.5 text-white text-sm focus:border-teal-500 focus:outline-none" />
                     </div>
                     <div>
-                      <label className="text-xs text-gray-500 block mb-1">Crop H</label>
+                      <label className="text-xs text-gray-400 block mb-1">Crop H</label>
                       <input type="number" value={Math.round(s.cropH)} onChange={(e) => set({ cropH: clamp(+e.target.value, 20, s.origH - s.cropY) })} className="w-full bg-gray-800 border border-gray-600 rounded-lg px-2 py-1.5 text-white text-sm focus:border-teal-500 focus:outline-none" />
                     </div>
                   </div>
@@ -1371,7 +1371,7 @@ function ImageEditor({ item, onChange, onRemove, customPresets, onAddPreset, onR
                   }} className="w-full text-xs py-1.5 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors">Reset Crop</button>
                   <div className="border-t border-gray-700/50"></div>
                   <div>
-                    <label className="text-xs text-gray-500">Rotation: {s.rotation}°</label>
+                    <label className="text-xs text-gray-400">Rotation: {s.rotation}°</label>
                     <input type="range" min={-180} max={180} value={s.rotation} onChange={(e) => set({ rotation: +e.target.value })} className="w-full accent-teal-500" />
                     <div className="flex gap-1 mt-1">
                       {[0, 90, 180, 270].map((r) => (
@@ -1605,10 +1605,10 @@ function BulkEditor({ items, onRemove, onReorder, customPresets, onAddPreset, on
                   <button onClick={(e) => { e.stopPropagation(); onRemove(item.id); }} className="absolute top-0 right-0 w-4 h-4 bg-red-600/80 hover:bg-red-500 text-white text-xs flex items-center justify-center rounded-bl opacity-0 group-hover:opacity-100 transition-opacity">×</button>
                 )}
               </div>
-              <p className={`text-center mt-1 truncate text-xs ${isOutlier ? "text-yellow-400" : isSel ? "text-amber-400" : "text-gray-500"}`} title={item.name}>
+              <p className={`text-center mt-1 truncate text-xs ${isOutlier ? "text-yellow-400" : isSel ? "text-amber-400" : "text-gray-400"}`} title={item.name}>
                 {item.name.length > 10 ? item.name.slice(0, 9) + "…" : item.name}
               </p>
-              <p className={`text-center text-xs ${isOutlier ? "text-yellow-500/70 font-medium" : "text-gray-500"}`}>{item.settings.origW}x{item.settings.origH}</p>
+              <p className={`text-center text-xs ${isOutlier ? "text-yellow-500/70 font-medium" : "text-gray-400"}`}>{item.settings.origW}x{item.settings.origH}</p>
             </div>
             {dragOverIdx === idx + 1 && dragIdx !== null && dragIdx !== idx + 1 && (
               <div className="w-0.5 bg-teal-400 rounded-full self-stretch flex-shrink-0 -mx-0.5"></div>
@@ -1630,7 +1630,7 @@ function BulkEditor({ items, onRemove, onReorder, customPresets, onAddPreset, on
             </div>
             <div className="min-w-0">
               <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Original — {selItem?.name}</h3>
-              <div className="text-xs text-gray-500 mt-0.5">{selItem?.settings.origW} x {selItem?.settings.origH} px — {fmtBytes(selItem?.fileSize || 0)}</div>
+              <div className="text-xs text-gray-400 mt-0.5">{selItem?.settings.origW} x {selItem?.settings.origH} px — {fmtBytes(selItem?.fileSize || 0)}</div>
             </div>
           </div>
 
@@ -1645,11 +1645,11 @@ function BulkEditor({ items, onRemove, onReorder, customPresets, onAddPreset, on
             <InteractivePreview settings={effSettings} imgEl={selImg} onUpdate={() => {}} />
           )}
           <div className="mt-2 flex items-center justify-center gap-3">
-            <span className="text-xs text-gray-500">
+            <span className="text-xs text-gray-400">
               {realSize !== null ? <span className="text-amber-400 font-medium">{fmtBytes(realSize)}</span> : <span className="animate-pulse">Calculating...</span>}
             </span>
-            <span className="text-xs text-gray-600">|</span>
-            <span className="text-xs text-gray-500">{FORMAT_LABELS[format]}</span>
+            <span className="text-xs text-gray-500">|</span>
+            <span className="text-xs text-gray-400">{FORMAT_LABELS[format]}</span>
           </div>
         </div>
 
@@ -1674,7 +1674,7 @@ function BulkEditor({ items, onRemove, onReorder, customPresets, onAddPreset, on
             )}
             {bgMode === "blur" && (
               <div className="space-y-2" style={{ animation: "slideDown 200ms ease-out" }}>
-                <label className="text-xs text-gray-500 block mb-1">Blur Amount: {blurAmount}px</label>
+                <label className="text-xs text-gray-400 block mb-1">Blur Amount: {blurAmount}px</label>
                 <input type="range" min={1} max={100} value={blurAmount} onChange={(e) => setBlurAmount(+e.target.value)} className="w-full accent-teal-500" />
                 <div className="grid grid-cols-2 gap-2 pt-1">
                   <button
@@ -1700,14 +1700,14 @@ function BulkEditor({ items, onRemove, onReorder, customPresets, onAddPreset, on
             </div>
             {format !== "png" && (
               <div className="flex items-center gap-2">
-                <span className="text-xs text-gray-500">Quality</span>
+                <span className="text-xs text-gray-400">Quality</span>
                 <input type="range" min={1} max={100} value={quality} onChange={(e) => setQuality(+e.target.value)} className="flex-1 accent-amber-500" />
                 <span className="text-xs text-gray-400 w-10 text-right">{quality}%</span>
               </div>
             )}
             <div className="text-xs text-gray-400">
               <span className="text-amber-400 font-medium">{canvasW}x{canvasH}</span>
-              <span className="mx-1.5 text-gray-500">|</span>
+              <span className="mx-1.5 text-gray-400">|</span>
               <span className="text-amber-400 font-medium">{realSize !== null ? fmtBytes(realSize) : "…"}</span>
               <span className="text-gray-400 ml-1">(preview)</span>
             </div>
@@ -1734,11 +1734,11 @@ function BulkEditor({ items, onRemove, onReorder, customPresets, onAddPreset, on
                 <div className="space-y-3 pt-3">
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="text-xs text-gray-500 block mb-1">Width</label>
+                      <label className="text-xs text-gray-400 block mb-1">Width</label>
                       <input type="number" value={canvasW} onChange={(e) => setCanvasW(Math.max(1, +e.target.value))} className="w-full bg-gray-800 border border-gray-600 rounded-lg px-3 py-1.5 text-white text-sm focus:border-amber-500 focus:outline-none" />
                     </div>
                     <div>
-                      <label className="text-xs text-gray-500 block mb-1">Height</label>
+                      <label className="text-xs text-gray-400 block mb-1">Height</label>
                       <input type="number" value={canvasH} onChange={(e) => setCanvasH(Math.max(1, +e.target.value))} className="w-full bg-gray-800 border border-gray-600 rounded-lg px-3 py-1.5 text-white text-sm focus:border-amber-500 focus:outline-none" />
                     </div>
                   </div>
@@ -1753,7 +1753,7 @@ function BulkEditor({ items, onRemove, onReorder, customPresets, onAddPreset, on
                         <button onClick={() => onRemovePreset(p.label)} className="text-xs px-1 py-1 bg-teal-900/40 hover:bg-red-600/50 text-teal-500 hover:text-red-300 rounded-r-lg transition-colors border border-l-0 border-teal-700/40">×</button>
                       </span>
                     ))}
-                    <button onClick={() => onAddPreset({ label: `${canvasW}x${canvasH}`, w: canvasW, h: canvasH })} className="text-xs px-2 py-1 bg-gray-700 hover:bg-amber-600/60 text-gray-500 hover:text-amber-200 rounded-lg transition-colors border border-dashed border-gray-600" title="Save preset">+ Save</button>
+                    <button onClick={() => onAddPreset({ label: `${canvasW}x${canvasH}`, w: canvasW, h: canvasH })} className="text-xs px-2 py-1 bg-gray-700 hover:bg-amber-600/60 text-gray-400 hover:text-amber-200 rounded-lg transition-colors border border-dashed border-gray-600" title="Save preset">+ Save</button>
                   </div>
                 </div>
               </div>
@@ -1771,7 +1771,7 @@ function BulkEditor({ items, onRemove, onReorder, customPresets, onAddPreset, on
             <div className={`grid transition-[grid-template-rows] duration-200 ${collapsed.snap ? "grid-rows-[0fr]" : "grid-rows-[1fr]"}`}>
               <div className="overflow-hidden">
                 <div className="space-y-3 pt-3">
-                  <p className="text-xs text-gray-500">How images fit inside the canvas (per-image aspect ratio preserved)</p>
+                  <p className="text-xs text-gray-400">How images fit inside the canvas (per-image aspect ratio preserved)</p>
                   <div className="grid grid-cols-2 gap-1">
                     <button onClick={() => setSnapMode("fit")} className={`text-xs py-2 rounded-lg font-medium transition-colors leading-tight ${snapMode === "fit" || snapMode === "height" ? "bg-teal-600 text-white" : "bg-gray-700 text-gray-400 hover:bg-gray-600"}`}>Fit<br/><span className="font-normal opacity-70">(Snap H)</span></button>
                     <button onClick={() => setSnapMode("fill")} className={`text-xs py-2 rounded-lg font-medium transition-colors leading-tight ${snapMode === "fill" || snapMode === "width" ? "bg-teal-600 text-white" : "bg-gray-700 text-gray-400 hover:bg-gray-600"}`}>Fill<br/><span className="font-normal opacity-70">(Snap W)</span></button>
@@ -1784,7 +1784,7 @@ function BulkEditor({ items, onRemove, onReorder, customPresets, onAddPreset, on
                     </label>
                     {applyRotation && (
                       <div className="mt-2">
-                        <label className="text-xs text-gray-500">Rotation: {rotation}°</label>
+                        <label className="text-xs text-gray-400">Rotation: {rotation}°</label>
                         <input type="range" min={-180} max={180} value={rotation} onChange={(e) => setRotation(+e.target.value)} className="w-full accent-teal-500" />
                         <div className="flex gap-1 mt-1">
                           {[0, 90, 180, 270].map((r) => (
@@ -2048,7 +2048,7 @@ export default function FitMyBit() {
   }, []); /* Empty deps — all state accessed via refs */
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex flex-col">
+    <main className="min-h-screen bg-gray-950 text-white flex flex-col">
       <style>{`@keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } } ::selection { background-color: rgba(34,197,94,0.28); color: #fff; }`}</style>
       <div className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-xl border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-2">
@@ -2063,11 +2063,11 @@ export default function FitMyBit() {
               <rect x="67" y="67" width="26" height="26" rx="4" fill="#145F4E"/>
             </svg>
             <h1 className="text-base font-bold text-white">Fit<span style={{ color: "#66bc8f" }}>My</span>Bit</h1>
-            <span className="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded-full">{items.length} image{items.length !== 1 ? "s" : ""}</span>
+            <span className="text-xs text-gray-400 bg-gray-800 px-2 py-0.5 rounded-full">{items.length} image{items.length !== 1 ? "s" : ""}</span>
           </div>
           <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto justify-end">
             <div className="flex bg-gray-800 rounded-lg p-0.5">
-              <button onClick={() => setMode("individual")} className={`px-4 py-2.5 sm:py-1.5 text-xs font-semibold rounded-md transition-colors ${mode === "individual" ? "bg-green-600 text-white" : "text-gray-400 hover:text-white"}`}>Individual</button>
+              <button onClick={() => setMode("individual")} className={`px-4 py-2.5 sm:py-1.5 text-xs font-semibold rounded-md transition-colors ${mode === "individual" ? "bg-green-700 text-white" : "text-gray-400 hover:text-white"}`}>Individual</button>
               <button onClick={() => setMode("bulk")} className={`px-4 py-2.5 sm:py-1.5 text-xs font-semibold rounded-md transition-colors ${mode === "bulk" ? "bg-amber-600 text-white" : "text-gray-400 hover:text-white"}`}>Bulk</button>
             </div>
             <button onClick={() => setShowShortcuts(!showShortcuts)} className="px-3 py-2.5 sm:py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white text-xs font-semibold rounded-lg transition-colors border border-gray-700 flex items-center gap-1.5" title="Keyboard shortcuts">
@@ -2091,10 +2091,10 @@ export default function FitMyBit() {
             className={`border-2 border-dashed rounded-3xl p-20 text-center cursor-pointer transition-all ${dragOver ? "border-green-500 bg-green-500/10" : "border-gray-700 hover:border-gray-500 hover:bg-gray-900"}`}
           >
             <div className="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" /></svg>
+              <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" /></svg>
             </div>
             <p className="text-lg font-semibold text-gray-300 mb-1">Drop images here or click to browse</p>
-            <p className="text-sm text-gray-500">Supports PNG, JPG, WebP, GIF, BMP, SVG and more</p>
+            <p className="text-sm text-gray-400">Supports PNG, JPG, WebP, GIF, BMP, SVG and more</p>
           </div>
         ) : (
           <>
@@ -2104,7 +2104,7 @@ export default function FitMyBit() {
               onDrop={onDrop}
               className={`border border-dashed rounded-xl p-3 text-center mb-6 transition-all ${dragOver ? "border-green-500 bg-green-500/10" : "border-gray-800 hover:border-gray-600"}`}
             >
-              <p className="text-xs text-gray-500">Drop more images here</p>
+              <p className="text-xs text-gray-400">Drop more images here</p>
             </div>
             {mode === "bulk" ? (
               <BulkEditor items={items} onRemove={onRemove} onReorder={onReorder} customPresets={customPresets} onAddPreset={addPreset} onRemovePreset={removePreset} />
@@ -2166,11 +2166,11 @@ export default function FitMyBit() {
                 Johny Domanský
               </a>
             </p>
-            <p className="text-xs text-gray-600">© {new Date().getFullYear()} FitMyBit · All pixels stretched to fit</p>
+            <p className="text-xs text-gray-400">© {new Date().getFullYear()} FitMyBit · All pixels stretched to fit</p>
           </div>
           <div className="hidden sm:block w-24" />{/* spacer to keep center balanced */}
         </div>
       </footer>
-    </div>
+    </main>
   );
 }
